@@ -1,0 +1,98 @@
+body {
+  height: 100vh;
+  right: 0;
+  top: 0;
+  width: 100vw;
+}
+
+.form-btn {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.form-container {
+  align-items: center;
+  background-color: grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+}
+
+.form-input {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.update-form-container{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  visibility: hidden;
+}
+
+.update-form-input {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.task-list-container{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.task-list-item{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.task-list-xmark{
+  color: grey;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.task-list-xmark:hover{
+  cursor: pointer;
+  color: #000000;
+  font-size: 24px;
+}
+
+.task-list-editmark{
+  color: grey;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.task-list-btn-container{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.task-list-item:hover {
+  cursor: pointer;
+}
+
+ul{
+  width: 50%;
+}
+
+/* .minhadivquevaifazerfuncionaressecaralho{
+  visibility: hidden;
+} */
