@@ -5,6 +5,7 @@ import TaskListContext from './TaskListContext';
 import postTaskInDatabase from '../helpers/postTaskInDatabase';
 import deleteTaskFromDatabase from '../helpers/deleteTaskFromDatabase';
 import updateTaskInDatabase from '../helpers/updateTaskInDatabase';
+import updateStatusInDatabase from '../helpers/updateStatusInDatabase';
 
 function TaskListProvider({ children }) {
   const [tasks, setTasks] = useState([]);
@@ -20,6 +21,11 @@ function TaskListProvider({ children }) {
 
   const updateTask = async (taskId, UpdatedTask) => {
     await updateTaskInDatabase(taskId, UpdatedTask);
+  };
+
+  const updateStatus = async (taskId, UpdatedStatus) => {
+    await updateStatusInDatabase(taskId, UpdatedStatus);
+    getAllTasks();
   };
 
   const deleteTask = async (taskId) => {
@@ -49,6 +55,7 @@ function TaskListProvider({ children }) {
     getAllTasks,
     postNewTask,
     updateTask,
+    updateStatus,
     deleteTask,
     validateInput,
     handleChange,
