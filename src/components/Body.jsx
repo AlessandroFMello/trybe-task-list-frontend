@@ -10,6 +10,7 @@ export default function Body() {
     deleteTask,
     getAllTasks,
     updateTask,
+    updateStatus,
     validateInput,
     handleChange,
   } = useContext(TaskListContext);
@@ -24,8 +25,11 @@ export default function Body() {
 
   const updateByTaskId = async ({ target }) => {
     const targetId = target.parentElement.id;
+    const selectedTaskInput = target.parentElement.firstElementChild;
     await updateTask(targetId, updatedTask);
     getAllTasks();
+    selectedTaskInput.style.visibility = 'hidden';
+    setUpdatedTask('');
   };
 
   const setTaskVisibility = ({ target }) => {
@@ -64,6 +68,7 @@ export default function Body() {
                         />
                       </Form.Label>
                     </Form.Group>
+
                     <Button
                       className="form-btn"
                       variant="success"
@@ -73,7 +78,21 @@ export default function Body() {
                       Atualizar Tarefa
                     </Button>
                   </Form>
+
                   <div className="task-list-btn-container" id={task.id}>
+                    <Form.Group controlId={task.id}>
+                      <Form.Control
+                        as="select"
+                        value={task.status}
+                        onChange={e => {
+                          updateStatus(Number(e.target.id), e.target.value);
+                        }}
+                      >
+                        <option value="PENDING">Pendente</option>
+                        <option value="CURRENT">Em Andamento</option>
+                        <option value="DONE">Completa</option>
+                      </Form.Control>
+                    </Form.Group>
                     <Button
                       variant="success"
                       type="button"
