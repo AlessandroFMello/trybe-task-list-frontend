@@ -22,7 +22,7 @@ export default function NewTaskForm() {
   return (
     <Form className="form-container" onSubmit={(e) => onSubmitTask(e)}>
       <Form.Group className="form-input">
-        <Form.Label>
+        <Form.Label className="form-label-header">
           <Form.Control
             onChange={(e) => handleChange(e, setNewTask)}
             placeholder="Insira uma nova tarefa"
@@ -33,7 +33,7 @@ export default function NewTaskForm() {
         </Form.Label>
       </Form.Group>
       <Button
-        className="form-btn"
+        className="form-btn-header"
         variant="success"
         type="submit"
         disabled={validateInput(newTask)}

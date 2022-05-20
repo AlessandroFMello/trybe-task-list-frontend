@@ -41,6 +41,15 @@ export default function Body() {
     }
   };
 
+  const colorObject = {
+    // "PENDING": "#ffb4bf",
+    // "CURRENT": "#f6f2d4",
+    // "DONE": "#bdf2d8",
+    "PENDING": "rgb(255, 180, 191, 0.8)",
+    "CURRENT": "rgb(246, 242, 212, 0.8)",
+    "DONE": "rgb(189, 242, 216, 0.8)",
+  }
+
   return (
     <div className="task-list-container">
       <ListGroup as="ul">
@@ -49,6 +58,7 @@ export default function Body() {
               <ListGroup.Item
                 as="li"
                 key={`${task.id}`}
+                style={{backgroundColor: `${colorObject[task.status]}`}}
               >
                 <div className="task-list-item" id={task.id}>
                   { task.task }
@@ -60,9 +70,10 @@ export default function Body() {
                     <Form.Group className="update-form-input">
                       <Form.Label>
                         <Form.Control
+                          as="input"
                           onChange={(e) => handleChange(e, setUpdatedTask)}
                           placeholder="Atualize a tarefa"
-                          type="input"
+                          // type="input"
                           value={updatedTask}
                           required
                         />
@@ -71,7 +82,7 @@ export default function Body() {
 
                     <Button
                       className="form-btn"
-                      variant="success"
+                      variant="secondary"
                       type="submit"
                       disabled={validateInput(updatedTask)}
                     >
@@ -83,6 +94,7 @@ export default function Body() {
                     <Form.Group controlId={task.id}>
                       <Form.Control
                         as="select"
+                        className="select-field"
                         value={task.status}
                         onChange={e => {
                           updateStatus(Number(e.target.id), e.target.value);
@@ -93,8 +105,9 @@ export default function Body() {
                         <option value="DONE">Completa</option>
                       </Form.Control>
                     </Form.Group>
+
                     <Button
-                      variant="success"
+                      variant="semCor"
                       type="button"
                       id={task.id}
                       icon={solid('edit')}
