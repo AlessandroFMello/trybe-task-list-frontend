@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { Form, ListGroup, Button } from 'react-bootstrap';
 import TaskListContext from '../context/TaskListContext';
+import { BsFillTrashFill } from 'react-icons/bs';
 
 export default function Body() {
   const {
@@ -42,9 +41,6 @@ export default function Body() {
   };
 
   const colorObject = {
-    // "PENDING": "#ffb4bf",
-    // "CURRENT": "#f6f2d4",
-    // "DONE": "#bdf2d8",
     "PENDING": "rgb(255, 180, 191, 0.8)",
     "CURRENT": "rgb(246, 242, 212, 0.8)",
     "DONE": "rgb(189, 242, 216, 0.8)",
@@ -73,7 +69,6 @@ export default function Body() {
                           as="input"
                           onChange={(e) => handleChange(e, setUpdatedTask)}
                           placeholder="Atualize a tarefa"
-                          // type="input"
                           value={updatedTask}
                           required
                         />
@@ -110,15 +105,13 @@ export default function Body() {
                       variant="semCor"
                       type="button"
                       id={task.id}
-                      icon={solid('edit')}
                       className="task-list-editmark"
                       onClick={(e) => setTaskVisibility(e)}
                     >
                       Editar
                     </Button>
-                    <FontAwesomeIcon
+                    <BsFillTrashFill
                       id={task.id}
-                      icon={solid('xmark')}
                       className="task-list-xmark"
                       onClick={(e) => deleteByTaskId(e)}
                     />

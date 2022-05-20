@@ -79,8 +79,6 @@ body {
 
 .task-list-xmark{
   color: grey;
-  padding-right: 10px;
-  padding-left: 10px;
 }
 
 .task-list-xmark:hover{
