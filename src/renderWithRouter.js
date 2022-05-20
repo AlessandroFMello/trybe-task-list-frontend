@@ -10,8 +10,9 @@ const renderWithRouter = (component) => {
     ...render(
       <TaskListProvider>
         <Router history={history}>{component}</Router>
-      </TaskListProvider>
-    ), history,
+      </TaskListProvider>,
+    ),
+    history,
   });
 };
 export default renderWithRouter;

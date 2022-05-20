@@ -18,7 +18,7 @@ describe('Testa o componente <Header />', () => {
 
   it('Testa se é possível adicionar texto no textbox', () => {
     const headerInput = screen.getByRole('textbox');
-    fireEvent.change(headerInput, {target: {value: 'abcde'}});
+    fireEvent.change(headerInput, { target: { value: 'abcde' } });
   });
 
   it('Testa se há um botão com texto "Adicionar Tarefa"', () => {
@@ -35,7 +35,7 @@ describe('Testa o componente <Header />', () => {
   it('Testa se o botão "Adicionar Tarefa" é habilitado corretamente quando há texto', () => {
     const headerBtn = screen.getByRole('button');
     const headerInput = screen.getByRole('textbox');
-    fireEvent.change(headerInput, {target: {value: 'Enabled Btn'}});
+    fireEvent.change(headerInput, { target: { value: 'Enabled Btn' } });
     expect(headerBtn).toBeEnabled();
   });
 
@@ -43,7 +43,7 @@ describe('Testa o componente <Header />', () => {
     const headerInput = screen.getByRole('textbox');
     const headerBtn = screen.getByRole('button');
 
-    fireEvent.change(headerInput, {target: {value: 'Teste de click'}});
+    fireEvent.change(headerInput, { target: { value: 'Teste de click' } });
 
     expect(headerBtn).toBeEnabled();
     fireEvent.click(headerBtn);

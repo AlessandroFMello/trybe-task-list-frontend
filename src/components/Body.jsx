@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Form, ListGroup, Button } from 'react-bootstrap';
-import TaskListContext from '../context/TaskListContext';
 import { BsFillTrashFill } from 'react-icons/bs';
+import TaskListContext from '../context/TaskListContext';
 
 export default function Body() {
   const {
@@ -41,10 +41,10 @@ export default function Body() {
   };
 
   const colorObject = {
-    "PENDING": "rgb(255, 180, 191, 0.8)",
-    "CURRENT": "rgb(246, 242, 212, 0.8)",
-    "DONE": "rgb(189, 242, 216, 0.8)",
-  }
+    PENDING: 'rgb(255, 180, 191, 0.8)',
+    CURRENT: 'rgb(246, 242, 212, 0.8)',
+    DONE: 'rgb(189, 242, 216, 0.8)',
+  };
 
   return (
     <div className="task-list-container">
@@ -54,10 +54,10 @@ export default function Body() {
               <ListGroup.Item
                 as="li"
                 key={`${task.id}`}
-                style={{backgroundColor: `${colorObject[task.status]}`}}
+                style={{ backgroundColor: `${colorObject[task.status]}` }}
               >
                 <div className="task-list-item" id={task.id}>
-                  { task.task } 
+                  { task.task }
                   <Form
                     className="update-form-container"
                     onSubmit={(e) => updateByTaskId(e)}
@@ -91,7 +91,7 @@ export default function Body() {
                         as="select"
                         className="select-field"
                         value={task.status}
-                        onChange={e => {
+                        onChange={(e) => {
                           updateStatus(Number(e.target.id), e.target.value);
                         }}
                       >
