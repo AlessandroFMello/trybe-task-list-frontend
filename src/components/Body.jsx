@@ -57,7 +57,7 @@ export default function Body() {
                 style={{backgroundColor: `${colorObject[task.status]}`}}
               >
                 <div className="task-list-item" id={task.id}>
-                  { task.task }
+                  { task.task } 
                   <Form
                     className="update-form-container"
                     onSubmit={(e) => updateByTaskId(e)}

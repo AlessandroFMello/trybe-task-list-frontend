@@ -6,7 +6,7 @@ export default function MainPage() {
   return (
     <>
       <header><Header /></header>
-      <div><Body /></div>
+      <main><Body /></main>
     </>
   );
 }
