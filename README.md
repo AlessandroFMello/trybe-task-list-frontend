@@ -1,10 +1,17 @@
-## Trybe-Task-List-Frontend
+# Trybe-Task-List-Frontend
 
-## Requirements
+# Requirements
 * Linux / WSL Environment
 
-## Setup with docker-compose
-# Clone the repo
+## FIRST OF ALL
+Go to [https://github.com/AlessandroFMello/trybe-task-list-backend](https://github.com/AlessandroFMello/trybe-task-list-backend) and get your backend running properly!!
+
+## THEN
+
+# Setup
+
+Clone the repo
+
 If you prefere SSH:
 ```bash
 git clone git@github.com:AlessandroFMello/trybe-task-list-frontend.git
@@ -12,43 +19,25 @@ cd trybe-task-list-frontend
 ```
 If you prefere HTTP:
 ```bash
-git clone https://github.com/AlessandroFMello/trybe-task-list-backend.git
+git clone https://github.com/AlessandroFMello/trybe-task-list-frontend.git
 cd trybe-task-list-frontend
 ```
 
-Create your .env file accordingly to the provided .env.example file
+Install all the needed dependencies
 ```bash
-cp .env.example .env
+npm install
+```
+or
+```bash
+npm i
 ```
 
-Building the containers should automagically install all the needed dependencies
+Start the application frontend and you're ready to play with the task list
 ```bash
-docker-compose up -d
+npm start
 ```
 
-Opening [http://localhost:8080/status](http://localhost:8080/status) should show you the application status
+Opening [http://localhost:3000](http://localhost:3000) should show you the running application
 
-Run the migrations using knex inside the api container
-```bash
-docker exec -it qrmenu-api npx knex migrate:latest
-```
-
-## Setup with Makefile
-An alternative way to build the app is using the Makefile, but the requirements are the same and the make command installed
-
-To build and run the app:
-```bash
-make up
-```
-
-To stop the app
-```bash
-make stop
-```
-
-To run the migrations
-```bash
-make migrate
-```
 
 Now you`re good to go
